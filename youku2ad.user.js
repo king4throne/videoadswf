@@ -1,4 +1,4 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name        opengghost2
 // @namespace   opengghost2
 // @include     http://*/*
@@ -22,14 +22,20 @@
 (function () {
     //Goddamn sina weibo.
     //'use strict';
+    var  huburl= 'https://github.com/king4throne/videoadswf/raw/master/';
     var Global = this;
     var window = this.window||window;
     var unsafeWindow = unsafeWindow;
     var unsafeGlobal = unsafeWindow; // Let's assume that...
-    var loader = 'http://localhost/opengg/loader.swf';
-    var ku6 = 'http://localhost/opengg/ku6.swf';
-    var iqiyi = 'http://localhost/opengg/iqiyi.swf';
-    var iqiyi5 = 'http://localhost/opengg/iqiyi5.swf';
+    var loader =huburl+ 'loader.swf';
+    var ku6 = huburl+'ku6.swf';
+    var iqiyi = huburl+'iqiyi.swf';
+    var iqiyi5 = huburl+'iqiyi5.swf';
+    var nplayer =huburl+'nplayer.swf';
+    var TudouYoukuPlayer_Homer_9 =huburl+'TudouYoukuPlayer_Homer_9.swf';
+    var PortalPlayer_7 =huburl+'PortalPlayer_7.swf';
+    var TudouVideoPlayer_Homer_238 =huburl+'TudouVideoPlayer_Homer_238.swf';
+
     var CONSTANTS = {
         PLAYER_DOM:    ['object','embed','iframe'],
         PLAYERS: [
@@ -48,15 +54,15 @@
             },
             {
                 find: /^http:\/\/js\.tudouui\.com\/.*?\/TudouYoukuPlayer_Homer[^.]*?\.swf/,
-                replace: 'http://localhost/opengg/TudouYoukuPlayer_Homer_9.swf'
+                replace: TudouYoukuPlayer_Homer_9.swf
             },
             {
                 find: /^http:\/\/js\.tudouui\.com\/.*?\/PortalPlayer[^.]*?\.swf/,
-                replace: 'http://localhost/opengg/PortalPlayer_7.swf'
+                replace: PortalPlayer_7.swf
             },
             {
                 find: /^http:\/\/js\.tudouui\.com\/.*?\/TudouVideoPlayer_Homer_[^.]*?.swf/,
-                replace: 'http://localhost/opengg/TudouVideoPlayer_Homer_238.swf'
+                replace: TudouVideoPlayer_Homer_238.swf
             },
             {
                 find: /^http:\/\/player\.youku\.com\/player\.php\//,
@@ -64,7 +70,7 @@
             },
             {
                 find: /^http:\/\/dp\.tudou\.com\/nplayer[^.]*?\.swf|http:\/\/js\.tudouui\.com\/doupao\/nplayer[^.]*?\.swf/,
-                replace: 'http://localhost/opengg/nplayer.swf'
+                replace: nplayer.swf
             },
             {
                 find: /^http:\/\/www.tudou.com\/(([a-z]|programs)\/.*)/,
